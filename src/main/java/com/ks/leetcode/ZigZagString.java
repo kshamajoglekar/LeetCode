@@ -44,7 +44,6 @@ public class ZigZagString {
 
         String result = Arrays.stream(list).filter(s1 ->
                 s1 != null).collect(Collectors.joining(""));
-        //System.out.println("result="+result);
         return result;
     }
 }
