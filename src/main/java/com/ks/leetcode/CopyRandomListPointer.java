@@ -3,14 +3,11 @@ package com.ks.leetcode;
 // Definition for a Node.
 
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class CopyRandomListPointer {
 
-    List<Node> copied = new ArrayList<>();
     Map<Node, Node> mapping = new HashMap<>();
 
     public Node copyRandomList(Node source) {
