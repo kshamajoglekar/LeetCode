@@ -4,6 +4,21 @@ import java.util.*;
 
 public class Graph {
 
+
+    public static class Node {
+        int a;
+        List<Node> adjecent = new ArrayList<>();
+
+        Node(int a) {
+            this.a = a;
+        }
+
+        public void addEdge(Node destination) {
+            this.adjecent.add(destination);
+        }
+
+    }
+
     HashSet<Node> visited = new HashSet<>();
 
     public boolean DFS(Node node, int value) {
@@ -91,17 +106,4 @@ public class Graph {
     }
 
 
-    public static class Node {
-        int a;
-        List<Node> adjecent = new ArrayList<>();
-
-        Node(int a) {
-            this.a = a;
-        }
-
-        public void addEdge(Node destination) {
-            this.adjecent.add(destination);
-        }
-
-    }
 }
