@@ -1,4 +1,4 @@
-package com.ks.leetcode;
+package com.ks.leetcode.easy;
 
 public class Solution {
     public static void main(String[] args) {
