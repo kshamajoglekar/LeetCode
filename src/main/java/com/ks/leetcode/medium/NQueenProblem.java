@@ -63,33 +63,32 @@ public class NQueenProblem {
 		printResult();
 	}
 	
-	public static void recurse(int row,int col,int[][]attMat){
-		
-		if(mat[row][col]==0) {
-		mat[row][col]=1;
-		for(int ,)
-			recurse()
-		}
-		
-	}
-
-	public static int[][] markAttackingPos(int row, int col,final int[][]mat){
-		
-		int[][] matR=new int[mat.length][mat.length];
-		//logic
-		matR[row][col]=1;
-		
-		for(int i=0;i<n;i++) {
-			for(int j=col+1;j<n;j++) {
-				//vertical
-				if(i==row) matR[i][j] =1;
-				//horizontal
-				if(j==col) matR[i][j] =1;
-				//diagonal --- hold for now
-				//if(i==j) matR[i][j] =1;			
+	public static void recurse(int row, int col, int[][] attMat) {
+		for (int rowLoc = 0; rowLoc < n; rowLoc++) {
+			if (attMat[rowLoc][col] == 0) {
+				if (col == n - 1) {
+					result[rowLoc][col] = 1;
+				} else {
+					int[][] matR = markAttackingPos(rowLoc, col, attMat);
+					recurse(rowLoc, col + 1, matR);
+				}
 			}
 		}
-		
+	}
+
+	public static int[][] markAttackingPos(int row, int col, final int[][] mat) {
+		int[][] matR = new int[mat.length][mat.length];
+		for (int i = 0; i < n; i++) {
+			System.arraycopy(mat[i], 0, matR[i], 0, n);
+		}
+		matR[row][col] = 1;
+		for (int i = 0; i < n; i++) {
+			for (int j = col + 1; j < n; j++) {
+				if (i == row || Math.abs(i - row) == Math.abs(j - col)) {
+					matR[i][j] = 1;
+				}
+			}
+		}
 		return matR;
 	}
 	
