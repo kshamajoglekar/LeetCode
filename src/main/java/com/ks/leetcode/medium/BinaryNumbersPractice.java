@@ -30,7 +30,7 @@ public class BinaryNumbersPractice {
 
         Stack<Integer> resultStack = new Stack<>();
         StringBuilder binary = new StringBuilder();
-        while (number != 0) { //TODO
+        while (number != 0) {
             int lastBit = number & 1;
             resultStack.push(lastBit);
             number = number >> 1;
