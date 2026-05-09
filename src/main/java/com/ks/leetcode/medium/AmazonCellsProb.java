@@ -6,7 +6,7 @@ public final class AmazonCellsProb {
 
 	public static int[] findStatus(int[] listOrig, int numberOfDays) {
 		
-		int [] list = Arrays.copyOf(listOrig, listOrig.length);		
+		int [] list = Arrays.copyOf(listOrig, listOrig.length);
 		int result[]=new int[list.length];
 		
 		for(int i=0; i<numberOfDays;i++) {
